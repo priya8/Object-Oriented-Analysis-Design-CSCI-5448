@@ -2,11 +2,11 @@
 Object-Oriented Analysis &amp; Design CSCI 4448-5448-001, -001B Assignments
 
 
-Team Members:
-Bhavani Rishitha Ravipati    </br>       109246465
-Priyanka Umesh Pandit Tailapur   </br>     109259683
-Priyanka Sundaram       </br>              109265722
-Reshma Chowdary Morampudi     </br>        109258663
+Team Members: </br>
+Bhavani Rishitha Ravipati&nbsp;&nbsp;109246465 </br>
+Priyanka Umesh Pandit Tailapur&nbsp;&nbsp;109259683 </br>
+Priyanka Sundaram&nbsp;&nbsp;109265722</br>
+Reshma Chowdary Morampudi&nbsp;&nbsp;109258663</br>
 
 
 
