@@ -11,13 +11,14 @@ Team Members: </br>
 109258663&nbsp;&nbsp;Reshma Chowdary Morampudi</br>
 </br></br>
 
-Solution to Question 6 of Assignment 2: 
+Question </br>
+Revisit your Shape Program from Homework 1.Write this program again (with the same requirements as the original) in a different OO language than you used the first time. Consider anything from an OOAD perspective that you’ve learned or thought about that you should change in this version.Include those changes in your code’s comments and your README file
 
-6. Revisit your Shape Program from Homework 1.
-Write this program again (with the same requirements as the original) in a different OO language than you used the first time. 
-Consider anything from an OOAD perspective that you’ve learned or thought about that you should change in this version.  
-Include those changes in your code’s comments and your README file
+Solution </br>
+1. We have chosen Python and implemented the above Question. </br>
 
-Instructions:
-1. We have chosen Python and implemented the above Question. The difference we could find was the overriding of the sort method. It just was to include the key ( which calls the area function of the class without knowing which class it is referred to )
-2. python Shapes.py
+2. The difference we observed was that, the overriding of the existing sort method was simpler in Python than in Java. We had to include the key (which calls the area function of the respective subclass) and sorts the shapes based on the area. This is abstracted from the main class. </br>
+
+3. Main Class creates list of Shape Objects, calls the SortShapes() function and DisplayShapes() function.</br>
+
+2. Running the file: python Shapes.py
