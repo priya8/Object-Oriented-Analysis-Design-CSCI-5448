@@ -17,7 +17,7 @@ Revisit your Shape Program from Homework 1.Write this program again (with the sa
 Solution </br>
 1. We have chosen Python and implemented the above Question. </br>
 
-2. The difference we observed was that, the overriding of the existing sort method was simpler in Python than in Java. We had to include the key (which calls the area function of the respective subclass) and sorts the shapes based on the area. This is abstracted from the main class. </br>
+2. The difference we observed was that, the overriding of the existing sort method was simpler in Python than in Java. We had to include the lambda function to override the sort function (which calls the area function of the respective subclass) and sorts the shapes based on the area. This is abstracted from the main class. </br>
 
 3. Main Class creates list of Shape Objects, calls the SortShapes() function and DisplayShapes() function.</br>
 
