@@ -17,3 +17,7 @@ Solution to Question 6 of Assignment 2:
 Write this program again (with the same requirements as the original) in a different OO language than you used the first time. 
 Consider anything from an OOAD perspective that you’ve learned or thought about that you should change in this version.  
 Include those changes in your code’s comments and your README file
+
+Instructions:
+1. We have chosen Python and implemented the above Question. The difference we could find was the overriding of the sort method. It just was to include the key ( which calls the area function of the class without knowing which class it is referred to )
+2. python Shapes.py
