@@ -22,25 +22,12 @@ public class Inventory {
 	public void setTools(ArrayList<Tools> tools) {
 		this.tools = tools;
 	}
-	
+	//This class keeps track of tools in the inventory
 	public ArrayList<Tools> getTools() {
 		return this.tools;
 	}
 	
-//	public ArrayList<Tools> getTools() {
-//		return this.tools;
-//	}
-//	
-//	public void setTools(ArrayList<Tools> toolsList) {
-//		this.tools = toolsList;
-//	}
-	
-	
-//	private InventoryHelper ih = new InventoryHelper();
-//	private ArrayList<Tools> toolsList = ih.getTools();
-//	
-//	
-	
+
 	
 	
 }

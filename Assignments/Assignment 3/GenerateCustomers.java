@@ -17,17 +17,14 @@ public class GenerateCustomers{
 	private String[] custID= {"B1","B2","B3","B4","R1","R2","R3","C1","C2","C3"};
 	
 
-	//private ArrayList<Tools> tools = RentalHelper.getRemainingTools();
-	//Inventory invt=new Inventory();
-	
-	
 	
 		
 	private Random rand = new Random();
 	
 	// 1-B, 2-R, 3-C
+	// This function returns the type of the customer based on the id generated .
 	private String generateCustType() {
-		//List<Integer> id = Arrays.asList(1,2,3);
+		
 		Integer randEl = rand.nextInt(3)+1;
 		
 		
@@ -51,7 +48,7 @@ public class GenerateCustomers{
 	public String generateCustID() {
 		
 		String cID=null;
-		//System.out.println(tools.size());
+		
 		if(tools.size()>=3) {
 			
 			String type = generateCustType();
@@ -59,19 +56,19 @@ public class GenerateCustomers{
 			switch(type) {
 				
 				case "B": 
-					//List<Integer> id1 = Arrays.asList(1,2,3,4);
+					
 					Integer randEl1 = rand.nextInt(4)+1;
 					cID = type + randEl1.toString();
 					break;
 					
 				case "R": 
-					//List<Integer> id2 = Arrays.asList(1,2,3);
+				
 					Integer randEl2 = rand.nextInt(3)+1;
 					cID = type + randEl2.toString();
 					break;
 					
 				case "C":
-					//List<Integer> id3 = Arrays.asList(1,2,3);
+					
 					Integer randEl3 = rand.nextInt(3)+1;
 					cID = type + randEl3.toString();
 					break;
@@ -87,13 +84,13 @@ public class GenerateCustomers{
 			switch(type) {
 			
 				case "R": 
-					//List<Integer> id2 = Arrays.asList(1,2,3);
+					
 					Integer randEl2 = rand.nextInt(3)+1;
 					cID = type + randEl2.toString();
 					break;
 					
 				case "C":
-//					List<Integer> id3 = Arrays.asList(1,2,3);
+//					
 					Integer randEl3 = rand.nextInt(3)+1;
 					cID = type + randEl3.toString();
 					break;
@@ -132,7 +129,7 @@ public class GenerateCustomers{
 		}
 		return cID;
 	}
-	
+	//This function validates the customer based on the number of rentals in the inventory
 	public boolean validCustomer(String cID,HashMap<String, Customer> hm, int day) {
 		int noOfTools=0;
 		int dayOfReturn=0;
@@ -155,7 +152,7 @@ public class GenerateCustomers{
 			break;
 			
 		case 'R': 
-			//System.out.println("Hello");
+			
 			RegularCustomer custR=  (RegularCustomer) hm.get(cID);
 			HashMap<Tools, Integer> rCust=custR.getRentals();
 			noOfTools= rCust.size();
@@ -172,7 +169,7 @@ public class GenerateCustomers{
 			break;
 			
 		case 'C':
-			//System.out.println("Hi");
+			
 			CasualCustomer custC= (CasualCustomer) hm.get(cID);
 			HashMap<Tools, Integer> cCust=custC.getRentals();
 			noOfTools=cCust.size();

@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class StoreSimulator {
 	
+	// This function returns price of a tool 
 	public static int getPrice(String toolID) {
 		int price = 0;
 		
@@ -42,7 +43,7 @@ public class StoreSimulator {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//Assuming that there could be 0 customers on some days, all the values generated are not valid customers
+		//Assuming that there could be 0 customers on some days, all the random values generated may not give valid customers
 		
 		CustomerList cl=new CustomerList();
 		HashMap<String, Customer> hm= cl.getCustomersList();
@@ -53,10 +54,9 @@ public class StoreSimulator {
 		
 		Inventory invt = new Inventory();
 		invt.create();
+	
 		
-		//System.out.println(invt.tools);
-		
-		// DAY1
+		// Rentals on DAY1
 		
 		int day = 1;
 		int totalPrice=0;
@@ -66,6 +66,8 @@ public class StoreSimulator {
 		int noOfNights = 0;
 		int dayOfReturn=0;
 		
+		
+		//Generates customers randomly and validates those customers based on number of tools  present in the inventory and the max number of days he can rent the tool.
 		GenerateCustomers cust=new GenerateCustomers(invt);
 		
 		
@@ -74,12 +76,9 @@ public class StoreSimulator {
 		
 		for(int i=0;i<noOfCustomers;i++)
 		{
-			//Rental rent=new Rental(invt);
+	
 			String cID=cust.generateCustID();
-			//System.out.println(cID);
-			//ArrayList<Tools> toolList=new ArrayList<>();
 			ArrayList<Tools> toolList=invt.getTools();
-			//System.out.println(toolList);
 			
 			boolean valid=cust.validCustomer(cID, hm,day);
 			
@@ -167,15 +166,14 @@ public class StoreSimulator {
 		
 		day++;
 		
-		//From DAY 2
+		//Accepting Return of Rentals and also giving rentals from DAY 2
 		
 		while(day<=3)
 		{
 			
 			Set<String> keyList=hm.keySet();
-			//Rental rent1=new Rental(invt);
 			
-			//RETURNING RENTALS
+			//Returning Rentals 
 			for(String cID: keyList)
 			{
 				//System.out.println(cID);
@@ -193,8 +191,7 @@ public class StoreSimulator {
 						dayOfReturn=bCust.get(key);
 						break;
 					}
-					//System.out.println(bCust.get(bCust.keySet().toArray()[0]));
-					//dayOfReturn=bCust.get(bCust.keySet().toArray()[0]);
+	
 					
 					ArrayList<Tools> toolsList1=new ArrayList<>();
 					for(Tools key: bCust.keySet())
@@ -213,7 +210,6 @@ public class StoreSimulator {
 							for(int i=0; i<activeList.size(); i++) {
 								
 								String toolID = activeList.get(i).toString().substring(1, 3);
-								//System.out.println(toolID+tool.toolID);
 								if(toolID.equals(tool.getToolID())) {
 									completedList.add(activeList.get(i));
 									activeList.remove(i);
@@ -261,7 +257,6 @@ public class StoreSimulator {
 							for(int i=0; i<activeList.size(); i++) {
 								
 								String toolID = activeList.get(i).toString().substring(1, 3);
-								//System.out.println(toolID+tool.toolID);
 								if(toolID.equals(tool.getToolID())){
 									completedList.add(activeList.get(i));
 									activeList.remove(i);
@@ -305,9 +300,7 @@ public class StoreSimulator {
 							for(int i=0; i<activeList.size(); i++) {
 								
 								String toolID = activeList.get(i).toString().substring(1, 3);
-								//System.out.println(toolID+tool.toolID);
 								if(toolID.equals(tool.getToolID())) {
-									//System.out.println(activeList.get(i));
 									completedList.add(activeList.get(i));
 									activeList.remove(i);
 								}
@@ -327,7 +320,7 @@ public class StoreSimulator {
 			}
 			}
 
-			//RENTING TOOLS
+			//Renting Tools
 			noOfCustomers=rand.nextInt(9)+1;
 			for(int i=0;i<noOfCustomers;i++)
 			{
@@ -417,10 +410,14 @@ public class StoreSimulator {
 		}
 		ArrayList<Tools> tools=invt.getTools();
 		int noOfTools=tools.size();
-		System.out.println(noOfTools);
-		System.out.println(activeList);
-		System.out.println(completedList);
-		System.out.println(totalPrice);
+		System.out.println("Number of Tools at the end of 35 days: "+ noOfTools+"\n");
+		System.out.println("Active Rentals List: Types of elements per list ares given below"+"\n");
+		System.out.println("ToolID - "+"CustomerID - "+"Number of nights rented - "+"Price of the rental"+"\n");
+		System.out.println(activeList+"\n");
+		System.out.println("Completed Rentals List: Active Rentals List: Types of elements per list are given below"+"\n");
+		System.out.println("ToolID - "+"CustomerID - "+"Number of nights rented - "+"Price of the rental"+"\n");
+		System.out.println(completedList+"\n");
+		System.out.println("Total amount by the store at the end of 35 days: "+totalPrice+"\n");
 	}
 }
 

@@ -14,23 +14,18 @@ public class Rental{
 	public Rental(Inventory invt) {
 		this.toolsList=invt.getTools();
 		this.invt=invt;
-		// TODO Auto-generated constructor stub
+		
 
 	}
 	
-   // Inventory invt = new Inventory();
-	
+   
 	private ArrayList<Tools> rentedTools;
-//	
-//	public ArrayList<Tools> getRemainingTools() {
-//		// TODO Auto-generated method stub
-//		return invt.getTools();
-//	}
 
-	
+
+	//This function returns the tools requested by the customer
 	public ArrayList<Tools> RentTools(int allowedRentals, int requestedRentals) {
 		
-		//ArrayList<Tools> toolsList = new ArrayList<>();
+		
 		rentedTools = new ArrayList<>();
 		
 		
@@ -38,9 +33,7 @@ public class Rental{
 			
 		{
 			
-			//toolsList = getRemainingTools();
-			//System.out.println(toolsList.size());
-			//System.out.println(toolsList.size());
+			
 			Collections.shuffle(toolsList);
 
 			for(int i = 0; i< requestedRentals; i++) 
@@ -51,15 +44,13 @@ public class Rental{
 				
 				}
 			
-			//invt.setTools(toolsList);
 			
 			}
-		//System.out.println(toolsList.size());
-		
 		
 		return rentedTools;
 	}
 	
+	//This function updates the tools in the inventory whenever customer returns tools to the store.
 	public void AcceptTools(ArrayList<Tools> toolsList) {
 		ArrayList<Tools> tl=this.toolsList;
 		
