@@ -10,3 +10,4 @@ Team Members: </br>
 109265722&nbsp;&nbsp;Priyanka Sundaram</br>
 109258663&nbsp;&nbsp;Reshma Chowdary Morampudi</br>
 </br></br>
+The main function is present in StoreSimulator.java class.
